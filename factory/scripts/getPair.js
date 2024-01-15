@@ -1,7 +1,7 @@
 module.exports = async () => {
   try {
     const { TOKENS, WETH } = require('../constant');
-    const WaleSwapFactory = artifacts.require('WaleSwapFactory');
+    const OrdinalSwapFactory = artifacts.require('OrdinalSwapFactory');
 
     if (process.argv[5] !== 'ropsten') {
       throw new Error('Invalid Network ID!');
@@ -16,7 +16,7 @@ module.exports = async () => {
     }
 
     let tokenAddress = TOKENS[process.argv[6]].address;
-    const uniswapV2FactoryInstance = await WaleSwapFactory.deployed();
+    const uniswapV2FactoryInstance = await OrdinalSwapFactory.deployed();
 
     let result = await uniswapV2FactoryInstance.getPair(tokenAddress, WETH);
 

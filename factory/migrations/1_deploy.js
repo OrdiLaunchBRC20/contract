@@ -1,9 +1,9 @@
 require("dotenv").config();
-const WaleSwapFactory = artifacts.require("WaleSwapFactory");
+const OrdinalSwapFactory = artifacts.require("OrdinalSwapFactory");
 
 module.exports = async function(deployer) {
   try {
-    await deployer.deploy(WaleSwapFactory, process.env.OPERATOR_ADDRESS, {
+    await deployer.deploy(OrdinalSwapFactory, process.env.OPERATOR_ADDRESS, {
       gas: 3000000,
       from: process.env.OPERATOR_ADDRESS,
       chainId: +process.env.CHAIN_ID,
