@@ -1,0 +1,10 @@
+.env
+node_modules/
+build/
+node_modules
+.env**
+
+**/node_modules/**
+**/.env**
+**/build/**
+
